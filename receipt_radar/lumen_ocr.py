@@ -198,8 +198,8 @@ def _wait_until_ready(client: httpx.Client, doc_id: str, say=print) -> str:
         i += 1
 
 
-# Lumen's word-level field names are confirmed from the portal's OCR Spec.
-# The parser accepts PascalCase and camelCase so a casing change can't break it.
+# Lumen's page fields are PascalCase (Words, Lines) and its word fields are
+# lower-case (text, confidence). Both casings are accepted, so a change can't break it.
 _TEXT_KEYS = ("Text", "text", "Value", "value", "Content", "content")
 _CONF_KEYS = ("Confidence", "confidence", "Score", "score")
 _WORD_LISTS = ("Words", "words")
@@ -227,39 +227,48 @@ def _confidence(value) -> float:
     return c / 100 if c > 1 else c
 
 
+def _word(w) -> Word | None:
+    if isinstance(w, str):
+        return Word(w, 0.0)  # text without a score
+    if isinstance(w, dict):
+        t, c = _first(w, _TEXT_KEYS), _first(w, _CONF_KEYS)
+        if isinstance(t, str):
+            return Word(t, _confidence(c) if c is not None else 0.0)
+    return None
+
+
 def parse_pages(data) -> OcrResult:
-    """Turn Lumen's pages response into plain text plus (word, confidence) pairs."""
+    """Turn Lumen's pages response into plain text plus (word, confidence) pairs.
+
+    The shape, as Lumen returns it (data of GET /documents/{id}/pages?IncludeWords=true):
+
+        { "Items": [ { "PageNumber": 1, "Confidence": {...},
+                       "Words": [ { "text": "TOTAL", "box": {...},
+                                    "confidence": { "measured": true, "value": 0.99, "unit": "word" } } ],
+                       "Lines": [ { "text": "TOTAL P289.00", "box": {...}, "confidence": {...},
+                                    "words": [ ...the same words again... ] } ] } ],
+          "IncludesWords": true }
+
+    Each word appears twice (on the page and inside its line), so we take the
+    page's Words, and fall back to the lines' words only when a page has none.
+    """
+    pages = _first(data, ("Items", "items", "Pages", "pages")) if isinstance(data, dict) else data
+    if isinstance(pages, dict):
+        pages = [pages]
     words: list[Word] = []
     lines: list[str] = []
-
-    def walk(node) -> None:
-        if isinstance(node, list):
-            for item in node:
-                walk(item)
-            return
-        if not isinstance(node, dict):
-            return
-        word_list = _first(node, _WORD_LISTS)
-        line_list = _first(node, _LINE_LISTS)
-        if isinstance(line_list, list):
-            for line in line_list:
-                if isinstance(line, dict):
-                    t = _first(line, _TEXT_KEYS)
-                    if isinstance(t, str):
-                        lines.append(t)
-        if isinstance(word_list, list):
-            for w in word_list:
-                if isinstance(w, str):
-                    words.append(Word(w, 0.0))  # text without a score
-                elif isinstance(w, dict):
-                    t, c = _first(w, _TEXT_KEYS), _first(w, _CONF_KEYS)
-                    if isinstance(t, str):
-                        words.append(Word(t, _confidence(c) if c is not None else 0.0))
-        for key, value in node.items():
-            if key not in _WORD_LISTS and isinstance(value, (list, dict)):
-                walk(value)
-
-    walk(data)
+    for page in pages or []:
+        if not isinstance(page, dict):
+            continue
+        page_lines = _first(page, _LINE_LISTS) or []
+        for line in page_lines:
+            t = _first(line, _TEXT_KEYS) if isinstance(line, dict) else None
+            if isinstance(t, str):
+                lines.append(t)
+        page_words = _first(page, _WORD_LISTS)
+        if not page_words:
+            page_words = [w for line in page_lines if isinstance(line, dict) for w in (_first(line, _WORD_LISTS) or [])]
+        words += [w for w in map(_word, page_words) if w]
     text = "\n".join(lines) if lines else " ".join(w.text for w in words)
     return OcrResult(text=text, words=words, source="live")
 

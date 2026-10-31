@@ -192,7 +192,7 @@ Next: finish Phase 1 (the first TODO or FAIL above), then python check.py 1
 | `python check.py 3` | Phase 3's offline checks, then **all 10 cases** in `cases.json` | About 20 Claude calls |
 | `python check.py 3 --offline` | Only the offline part | No |
 
-The live checks use a scratch copy of `data/`, so they never touch your own `expenses.csv`.
+The live checks use a scratch copy of `data/`, so they never touch your own `expenses.csv`. They also always read the saved Lumen results in `ocr_cache/`, so a test run never spends Lumen credits.
 
 ---
 
@@ -220,6 +220,18 @@ python -m receipt_radar.lumen_ocr receipts/01-fastfood.jpg
 ```
 
 You'll see the text, and the five words Lumen was least sure about. That **confidence** number matters in Phase 3.
+
+This is what Lumen actually sends back for each page (shortened). `lumen_ocr.py` turns it into plain text plus `(word, confidence)` pairs:
+
+```json
+{ "data": { "Items": [ { "PageNumber": 1,
+    "Words": [ { "text": "P289.00",
+                 "box": { "x": 0.71, "y": 0.62, "w": 0.09, "h": 0.02 },
+                 "confidence": { "measured": true, "value": 0.995, "unit": "word" } } ],
+    "Lines": [ { "text": "TOTAL P289.00", "words": [ ... ] } ] } ],
+  "IncludesWords": true },
+  "requestId": "..." }
+```
 
 ---
 
@@ -449,7 +461,7 @@ This runs all 10 samples, in order, through the full pipeline: OCR â†’ Reader â†
 | 6 | Ride-hailing e-receipt | Category | Transport |
 | 7 | Electric bill | Category, large amount | Bills |
 | 8 | Prepaid load receipt | Local category | Load |
-| 9 | Faded thermal paper | OCR and Claude disagree | The gate stops it and asks |
+| 9 | Faded thermal paper, with a coffee stain on the total | OCR and Claude disagree | The gate stops it and asks (Lumen reads the total as `5.00`) |
 | 10 | Sideways photo | Rotation | Logs correctly |
 
 **Passes when:** `10 of 10 cases pass`.

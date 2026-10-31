@@ -61,9 +61,14 @@ def todo(message: str):
 
 @contextlib.contextmanager
 def scratch_data():
-    """Point the ledger at a throwaway copy of data/ (fresh, empty expenses.csv)."""
-    from receipt_radar import settings
+    """Point the ledger at a throwaway copy of data/ (fresh, empty expenses.csv).
+
+    Tests always read the saved Lumen results in ocr_cache/, even with OCR_MODE=live,
+    so a test run never re-uploads the samples or spends Lumen credits.
+    """
+    from receipt_radar import lumen_ocr, settings
     saved = settings.DATA_DIR, settings.EXPENSES_CSV, settings.BUDGET_JSON
+    saved_mode, lumen_ocr.OCR_MODE = lumen_ocr.OCR_MODE, "cached"
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         if saved[2].exists():
@@ -73,6 +78,7 @@ def scratch_data():
             yield tmp
         finally:
             settings.DATA_DIR, settings.EXPENSES_CSV, settings.BUDGET_JSON = saved
+            lumen_ocr.OCR_MODE = saved_mode
 
 
 def receipt(**overrides):
@@ -227,17 +233,17 @@ def todo3_photo_and_ocr_text():
 
 @live(1)
 def clear_sample_is_sure_blurry_is_not():
-    from receipt_radar.lumen_ocr import read_receipt_text
+    from receipt_radar.lumen_ocr import load_cached  # the saved Lumen result: no credits
     from receipt_radar.reader import read_receipt
     from receipt_radar.schema import Receipt
     clear = ROOT / "receipts" / SAMPLE_CLEAR
-    r = read_receipt(clear, read_receipt_text(clear, say=lambda m: None))
+    r = read_receipt(clear, load_cached(clear))
     assert isinstance(r, Receipt), "the clear sample did not come back as a Receipt"
     print(f"      clear:  {r.date} | {r.vendor} | {r.amount_php} | {r.category} | sure={r.sure}")
     assert r.sure, "the clear sample should come back sure: true"
     assert r.vendor and r.amount_php > 0 and r.category, "the clear sample should fill date, vendor, amount and category"
     blurry = ROOT / "receipts" / SAMPLE_BLURRY
-    b = read_receipt(blurry, read_receipt_text(blurry, say=lambda m: None))
+    b = read_receipt(blurry, load_cached(blurry))
     print(f"      blurry: sure={getattr(b, 'sure', None)} unsure_about={getattr(b, 'unsure_about', None)}")
     assert b is None or not b.sure, "the blurry sample should come back sure: false"
 

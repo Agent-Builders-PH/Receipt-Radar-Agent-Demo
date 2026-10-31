@@ -1,157 +1,424 @@
 {
   "file": "04-blurry.jpg",
-  "source": "synthetic",
-  "document_id": null,
-  "text": "SUPERSAVERS MART\nOrtigas Ave,, Pasig City\n\nl0/26/2o2b 6:o2 PM SI# 77?\n-----------------------?\nRi? 5kg 325.oo\nEggs 1 tray 2A5?\nChi? l.2kg 3l2?\nCooking oil 1L 12B.00\nVegetables 2l4.2S\nDetergent 622.0o\n----------------------------------------------\nTOTAL P1,B4b,75\nCASH 2,ooo,00\nCHANGE l53?",
+  "source": "lumen",
+  "document_id": "26a729df-3fc7-4d30-902f-6b208d50f1fe",
+  "text": "II i\ni\n-----\n-\ndin 111\nill #####",
   "words": [
     {
-      "text": "SUPERSAVERS",
-      "confidence": 0.34
+      "text": "II",
+      "confidence": 0.14771902084350585
     },
     {
-      "text": "MART",
-      "confidence": 0.55
+      "text": "i",
+      "confidence": 0.813682861328125
     },
     {
-      "text": "Ortigas",
-      "confidence": 0.51
+      "text": "i",
+      "confidence": 0.5720055770874023
     },
     {
-      "text": "Ave,,",
-      "confidence": 0.47
+      "text": "-----",
+      "confidence": 0.2422034454345703
     },
     {
-      "text": "Pasig",
-      "confidence": 0.42
+      "text": "-",
+      "confidence": 0.5575504302978516
     },
     {
-      "text": "City",
-      "confidence": 0.29
+      "text": "din",
+      "confidence": 0.29926458358764646
     },
     {
-      "text": "l0/26/2o2b",
-      "confidence": 0.37
+      "text": "111",
+      "confidence": 0.7708326721191406
     },
     {
-      "text": "6:o2",
-      "confidence": 0.31
+      "text": "ill",
+      "confidence": 0.24727258682250977
     },
     {
-      "text": "PM",
-      "confidence": 0.49
-    },
-    {
-      "text": "SI#",
-      "confidence": 0.29
-    },
-    {
-      "text": "77?",
-      "confidence": 0.38
-    },
-    {
-      "text": "-----------------------?",
-      "confidence": 0.37
-    },
-    {
-      "text": "Ri?",
-      "confidence": 0.3
-    },
-    {
-      "text": "5kg",
-      "confidence": 0.59
-    },
-    {
-      "text": "325.oo",
-      "confidence": 0.59
-    },
-    {
-      "text": "Eggs",
-      "confidence": 0.56
-    },
-    {
-      "text": "1",
-      "confidence": 0.51
-    },
-    {
-      "text": "tray",
-      "confidence": 0.61
-    },
-    {
-      "text": "2A5?",
-      "confidence": 0.34
-    },
-    {
-      "text": "Chi?",
-      "confidence": 0.58
-    },
-    {
-      "text": "l.2kg",
-      "confidence": 0.35
-    },
-    {
-      "text": "3l2?",
-      "confidence": 0.29
-    },
-    {
-      "text": "Cooking",
-      "confidence": 0.28
-    },
-    {
-      "text": "oil",
-      "confidence": 0.41
-    },
-    {
-      "text": "1L",
-      "confidence": 0.45
-    },
-    {
-      "text": "12B.00",
-      "confidence": 0.57
-    },
-    {
-      "text": "Vegetables",
-      "confidence": 0.33
-    },
-    {
-      "text": "2l4.2S",
-      "confidence": 0.47
-    },
-    {
-      "text": "Detergent",
-      "confidence": 0.51
-    },
-    {
-      "text": "622.0o",
-      "confidence": 0.55
-    },
-    {
-      "text": "----------------------------------------------",
-      "confidence": 0.58
-    },
-    {
-      "text": "TOTAL",
-      "confidence": 0.59
-    },
-    {
-      "text": "P1,B4b,75",
-      "confidence": 0.4
-    },
-    {
-      "text": "CASH",
-      "confidence": 0.62
-    },
-    {
-      "text": "2,ooo,00",
-      "confidence": 0.33
-    },
-    {
-      "text": "CHANGE",
-      "confidence": 0.61
-    },
-    {
-      "text": "l53?",
-      "confidence": 0.3
+      "text": "#####",
+      "confidence": 0.2795081520080566
     }
   ],
-  "raw": null
+  "raw": {
+    "Items": [
+      {
+        "DocumentID": "26a729df-3fc7-4d30-902f-6b208d50f1fe",
+        "PageNumber": 1,
+        "Origin": "rasterised",
+        "ToSource": {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "d": 0,
+          "e": 1,
+          "f": 0
+        },
+        "Raster": {
+          "widthPx": 1030,
+          "heightPx": 840,
+          "dpi": 200
+        },
+        "Confidence": {
+          "measured": true,
+          "value": 0.43667103661431206,
+          "unit": "word"
+        },
+        "Words": [
+          {
+            "text": "II",
+            "box": {
+              "x": 0.32045167684555054,
+              "y": 0.15974515676498413,
+              "w": 0.3505237400531769,
+              "h": 0.1107327863574028
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.14771902084350585,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "i",
+            "box": {
+              "x": 0.37985530495643616,
+              "y": 0.16466765105724335,
+              "w": 0.23189175128936768,
+              "h": 0.05420117825269699
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.813682861328125,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "i",
+            "box": {
+              "x": 0.3229080140590668,
+              "y": 0.2079734057188034,
+              "w": 0.16367055475711823,
+              "h": 0.0468503013253212
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.5720055770874023,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "-----",
+            "box": {
+              "x": 0.16920721530914307,
+              "y": 0.280745267868042,
+              "w": 0.26080986857414246,
+              "h": 0.05474139377474785
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.2422034454345703,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "-",
+            "box": {
+              "x": 0.6121755242347717,
+              "y": 0.3099643290042877,
+              "w": 0.1361972689628601,
+              "h": 0.04620206728577614
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.5575504302978516,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "din",
+            "box": {
+              "x": 0.1539512425661087,
+              "y": 0.3673877418041229,
+              "w": 0.1988787204027176,
+              "h": 0.26154762506484985
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.29926458358764646,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "111",
+            "box": {
+              "x": 0.1468932330608368,
+              "y": 0.6640432476997375,
+              "w": 0.09633167833089828,
+              "h": 0.1328882873058319
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.7708326721191406,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "ill",
+            "box": {
+              "x": 0.6596973538398743,
+              "y": 0.6975305080413818,
+              "w": 0.14257347583770752,
+              "h": 0.1318376064300537
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.24727258682250977,
+              "unit": "word"
+            }
+          },
+          {
+            "text": "#####",
+            "box": {
+              "x": 0.7098222970962524,
+              "y": 0.40265801548957825,
+              "w": 0.1034591868519783,
+              "h": 0.2591903507709503
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.2795081520080566,
+              "unit": "word"
+            }
+          }
+        ],
+        "Lines": [
+          {
+            "text": "II i",
+            "box": {
+              "x": 0.32045167684555054,
+              "y": 0.15974515676498413,
+              "w": 0.3505237400531769,
+              "h": 0.1107327863574028
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.4807009506225586,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "II",
+                "box": {
+                  "x": 0.32045167684555054,
+                  "y": 0.15974515676498413,
+                  "w": 0.3505237400531769,
+                  "h": 0.1107327863574028
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.14771902084350585,
+                  "unit": "word"
+                }
+              },
+              {
+                "text": "i",
+                "box": {
+                  "x": 0.37985530495643616,
+                  "y": 0.16466765105724335,
+                  "w": 0.23189175128936768,
+                  "h": 0.05420117825269699
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.813682861328125,
+                  "unit": "word"
+                }
+              }
+            ]
+          },
+          {
+            "text": "i",
+            "box": {
+              "x": 0.3229080140590668,
+              "y": 0.2079734057188034,
+              "w": 0.16367055475711823,
+              "h": 0.0468503013253212
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.5720055770874023,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "i",
+                "box": {
+                  "x": 0.3229080140590668,
+                  "y": 0.2079734057188034,
+                  "w": 0.16367055475711823,
+                  "h": 0.0468503013253212
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.5720055770874023,
+                  "unit": "word"
+                }
+              }
+            ]
+          },
+          {
+            "text": "-----",
+            "box": {
+              "x": 0.16920721530914307,
+              "y": 0.280745267868042,
+              "w": 0.26080986857414246,
+              "h": 0.05474139377474785
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.2422034454345703,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "-----",
+                "box": {
+                  "x": 0.16920721530914307,
+                  "y": 0.280745267868042,
+                  "w": 0.26080986857414246,
+                  "h": 0.05474139377474785
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.2422034454345703,
+                  "unit": "word"
+                }
+              }
+            ]
+          },
+          {
+            "text": "-",
+            "box": {
+              "x": 0.6121755242347717,
+              "y": 0.3099643290042877,
+              "w": 0.1361972689628601,
+              "h": 0.04620206728577614
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.5575504302978516,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "-",
+                "box": {
+                  "x": 0.6121755242347717,
+                  "y": 0.3099643290042877,
+                  "w": 0.1361972689628601,
+                  "h": 0.04620206728577614
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.5575504302978516,
+                  "unit": "word"
+                }
+              }
+            ]
+          },
+          {
+            "text": "din 111",
+            "box": {
+              "x": 0.146315798163414,
+              "y": 0.3673877418041229,
+              "w": 0.2065141499042511,
+              "h": 0.4356090724468231
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.5350485992431641,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "din",
+                "box": {
+                  "x": 0.1539512425661087,
+                  "y": 0.3673877418041229,
+                  "w": 0.1988787204027176,
+                  "h": 0.26154762506484985
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.29926458358764646,
+                  "unit": "word"
+                }
+              },
+              {
+                "text": "111",
+                "box": {
+                  "x": 0.1468932330608368,
+                  "y": 0.6640432476997375,
+                  "w": 0.09633167833089828,
+                  "h": 0.1328882873058319
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.7708326721191406,
+                  "unit": "word"
+                }
+              }
+            ]
+          },
+          {
+            "text": "ill #####",
+            "box": {
+              "x": 0.6596973538398743,
+              "y": 0.3998333215713501,
+              "w": 0.15435901284217834,
+              "h": 0.42953479290008545
+            },
+            "confidence": {
+              "measured": true,
+              "value": 0.2633903694152832,
+              "unit": "word"
+            },
+            "words": [
+              {
+                "text": "ill",
+                "box": {
+                  "x": 0.6596973538398743,
+                  "y": 0.6975305080413818,
+                  "w": 0.14257347583770752,
+                  "h": 0.1318376064300537
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.24727258682250977,
+                  "unit": "word"
+                }
+              },
+              {
+                "text": "#####",
+                "box": {
+                  "x": 0.7098222970962524,
+                  "y": 0.40265801548957825,
+                  "w": 0.1034591868519783,
+                  "h": 0.2591903507709503
+                },
+                "confidence": {
+                  "measured": true,
+                  "value": 0.2795081520080566,
+                  "unit": "word"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "IncludesWords": true
+  }
 }
