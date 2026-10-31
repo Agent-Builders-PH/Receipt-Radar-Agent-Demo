@@ -136,7 +136,10 @@ def _check(resp: httpx.Response) -> dict:
     if code == 401:
         raise LumenAuthError("Lumen said 401: the API key or secret is wrong.")
     if code == 403:
-        raise LumenFallback(f"Lumen said 403 (key not scoped to OCR, or out of credits): {resp.text[:200]}")
+        if "ACCESS_DENIED" in resp.text or "VIEW_ONLY_ACCESS" in resp.text:
+            raise LumenAuthError("Lumen said 403: this API key has no OCR grant (or is view-only). "
+                                 "Add the OCR grant in the Organization Portal, Settings, API Keys.")
+        raise LumenFallback(f"Lumen said 403 (out of API or Lumen credits): {resp.text[:200]}")
     if code in (413, 415):
         raise LumenError(f"Lumen said {code}: file too big or wrong type (not charged).")
     if code in (429, 503):
@@ -211,8 +214,17 @@ def _first(d: dict, keys: tuple[str, ...]):
 
 
 def _confidence(value) -> float:
+    """A number (0-1 or 0-100), or Lumen's {measured, value, unit} object.
+
+    An unmeasured confidence ({"measured": false, "reason": ...}) counts as 0,
+    so the gate never trusts a number Lumen didn't score.
+    """
+    if isinstance(value, dict):
+        if not value.get("measured", "value" in value) or value.get("value") is None:
+            return 0.0
+        value = value["value"]
     c = float(value)
-    return c / 100 if c > 1 else c  # accept 0-1 or 0-100
+    return c / 100 if c > 1 else c
 
 
 def parse_pages(data) -> OcrResult:
@@ -237,10 +249,12 @@ def parse_pages(data) -> OcrResult:
                         lines.append(t)
         if isinstance(word_list, list):
             for w in word_list:
-                if isinstance(w, dict):
+                if isinstance(w, str):
+                    words.append(Word(w, 0.0))  # text without a score
+                elif isinstance(w, dict):
                     t, c = _first(w, _TEXT_KEYS), _first(w, _CONF_KEYS)
-                    if isinstance(t, str) and c is not None:
-                        words.append(Word(t, _confidence(c)))
+                    if isinstance(t, str):
+                        words.append(Word(t, _confidence(c) if c is not None else 0.0))
         for key, value in node.items():
             if key not in _WORD_LISTS and isinstance(value, (list, dict)):
                 walk(value)
