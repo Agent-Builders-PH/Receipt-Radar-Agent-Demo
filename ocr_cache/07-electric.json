@@ -1,0 +1,229 @@
+{
+  "file": "07-electric.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "           METRO LUZON ELECTRIC CO.\n             STATEMENT OF ACCOUNT\n\nAccount No.                       0412-7781-22\nBill Date                         Oct 18, 2026\nBilling Period                 Sep 15 - Oct 14\nDue Date                          Oct 30, 2026\n----------------------------------------------\nEnergy used                            312 kWh\nGeneration charge                     2,301.12\nTransmission                            402.48\nDistribution                          1,118.40\nTaxes and others                      1,040.35\n----------------------------------------------\nTOTAL AMOUNT DUE                     P4,862.35\n\n        Pay on or before the due date.",
+  "words": [
+    {
+      "text": "METRO",
+      "confidence": 0.94
+    },
+    {
+      "text": "LUZON",
+      "confidence": 0.93
+    },
+    {
+      "text": "ELECTRIC",
+      "confidence": 0.97
+    },
+    {
+      "text": "CO.",
+      "confidence": 0.93
+    },
+    {
+      "text": "STATEMENT",
+      "confidence": 0.96
+    },
+    {
+      "text": "OF",
+      "confidence": 0.95
+    },
+    {
+      "text": "ACCOUNT",
+      "confidence": 0.92
+    },
+    {
+      "text": "Account",
+      "confidence": 0.96
+    },
+    {
+      "text": "No.",
+      "confidence": 0.92
+    },
+    {
+      "text": "0412-7781-22",
+      "confidence": 0.95
+    },
+    {
+      "text": "Bill",
+      "confidence": 0.92
+    },
+    {
+      "text": "Date",
+      "confidence": 0.93
+    },
+    {
+      "text": "Oct",
+      "confidence": 0.95
+    },
+    {
+      "text": "18,",
+      "confidence": 0.98
+    },
+    {
+      "text": "2026",
+      "confidence": 0.93
+    },
+    {
+      "text": "Billing",
+      "confidence": 0.94
+    },
+    {
+      "text": "Period",
+      "confidence": 0.96
+    },
+    {
+      "text": "Sep",
+      "confidence": 0.99
+    },
+    {
+      "text": "15",
+      "confidence": 0.96
+    },
+    {
+      "text": "-",
+      "confidence": 0.95
+    },
+    {
+      "text": "Oct",
+      "confidence": 0.99
+    },
+    {
+      "text": "14",
+      "confidence": 0.92
+    },
+    {
+      "text": "Due",
+      "confidence": 0.98
+    },
+    {
+      "text": "Date",
+      "confidence": 0.94
+    },
+    {
+      "text": "Oct",
+      "confidence": 0.93
+    },
+    {
+      "text": "30,",
+      "confidence": 0.93
+    },
+    {
+      "text": "2026",
+      "confidence": 0.94
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.98
+    },
+    {
+      "text": "Energy",
+      "confidence": 0.93
+    },
+    {
+      "text": "used",
+      "confidence": 0.96
+    },
+    {
+      "text": "312",
+      "confidence": 0.96
+    },
+    {
+      "text": "kWh",
+      "confidence": 0.95
+    },
+    {
+      "text": "Generation",
+      "confidence": 0.96
+    },
+    {
+      "text": "charge",
+      "confidence": 0.92
+    },
+    {
+      "text": "2,301.12",
+      "confidence": 0.92
+    },
+    {
+      "text": "Transmission",
+      "confidence": 0.93
+    },
+    {
+      "text": "402.48",
+      "confidence": 0.97
+    },
+    {
+      "text": "Distribution",
+      "confidence": 0.95
+    },
+    {
+      "text": "1,118.40",
+      "confidence": 0.94
+    },
+    {
+      "text": "Taxes",
+      "confidence": 0.96
+    },
+    {
+      "text": "and",
+      "confidence": 0.95
+    },
+    {
+      "text": "others",
+      "confidence": 0.94
+    },
+    {
+      "text": "1,040.35",
+      "confidence": 0.98
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.97
+    },
+    {
+      "text": "TOTAL",
+      "confidence": 0.94
+    },
+    {
+      "text": "AMOUNT",
+      "confidence": 0.96
+    },
+    {
+      "text": "DUE",
+      "confidence": 0.96
+    },
+    {
+      "text": "P4,862.35",
+      "confidence": 0.98
+    },
+    {
+      "text": "Pay",
+      "confidence": 0.97
+    },
+    {
+      "text": "on",
+      "confidence": 0.94
+    },
+    {
+      "text": "or",
+      "confidence": 0.99
+    },
+    {
+      "text": "before",
+      "confidence": 0.93
+    },
+    {
+      "text": "the",
+      "confidence": 0.95
+    },
+    {
+      "text": "due",
+      "confidence": 0.97
+    },
+    {
+      "text": "date.",
+      "confidence": 0.93
+    }
+  ],
+  "raw": null
+}

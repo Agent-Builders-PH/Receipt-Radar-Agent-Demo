@@ -1,0 +1,125 @@
+{
+  "file": "02-ewallet.png",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "Payment successful\nPHP 450.00\nPaid to Kape't Tinapay Bakery\nDate Oct 29, 2026 8:12 AM\nAmount PHP 450.00\nFee PHP 0.00\nRef No. 7012 345 678901\nTotal PHP 450.00",
+  "words": [
+    {
+      "text": "Payment",
+      "confidence": 0.99
+    },
+    {
+      "text": "successful",
+      "confidence": 0.99
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.92
+    },
+    {
+      "text": "450.00",
+      "confidence": 0.93
+    },
+    {
+      "text": "Paid",
+      "confidence": 0.98
+    },
+    {
+      "text": "to",
+      "confidence": 0.97
+    },
+    {
+      "text": "Kape't",
+      "confidence": 0.97
+    },
+    {
+      "text": "Tinapay",
+      "confidence": 0.94
+    },
+    {
+      "text": "Bakery",
+      "confidence": 0.96
+    },
+    {
+      "text": "Date",
+      "confidence": 0.96
+    },
+    {
+      "text": "Oct",
+      "confidence": 0.96
+    },
+    {
+      "text": "29,",
+      "confidence": 0.93
+    },
+    {
+      "text": "2026",
+      "confidence": 0.95
+    },
+    {
+      "text": "8:12",
+      "confidence": 0.95
+    },
+    {
+      "text": "AM",
+      "confidence": 0.97
+    },
+    {
+      "text": "Amount",
+      "confidence": 0.99
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.99
+    },
+    {
+      "text": "450.00",
+      "confidence": 0.96
+    },
+    {
+      "text": "Fee",
+      "confidence": 0.95
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.94
+    },
+    {
+      "text": "0.00",
+      "confidence": 0.92
+    },
+    {
+      "text": "Ref",
+      "confidence": 0.92
+    },
+    {
+      "text": "No.",
+      "confidence": 0.95
+    },
+    {
+      "text": "7012",
+      "confidence": 0.94
+    },
+    {
+      "text": "345",
+      "confidence": 0.95
+    },
+    {
+      "text": "678901",
+      "confidence": 0.98
+    },
+    {
+      "text": "Total",
+      "confidence": 0.96
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.96
+    },
+    {
+      "text": "450.00",
+      "confidence": 0.94
+    }
+  ],
+  "raw": null
+}

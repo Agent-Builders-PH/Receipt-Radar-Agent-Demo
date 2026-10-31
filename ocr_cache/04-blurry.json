@@ -1,0 +1,157 @@
+{
+  "file": "04-blurry.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "SUPERSAVERS MART\nOrtigas Ave,, Pasig City\n\nl0/26/2o2b 6:o2 PM SI# 77?\n-----------------------?\nRi? 5kg 325.oo\nEggs 1 tray 2A5?\nChi? l.2kg 3l2?\nCooking oil 1L 12B.00\nVegetables 2l4.2S\nDetergent 622.0o\n----------------------------------------------\nTOTAL P1,B4b,75\nCASH 2,ooo,00\nCHANGE l53?",
+  "words": [
+    {
+      "text": "SUPERSAVERS",
+      "confidence": 0.34
+    },
+    {
+      "text": "MART",
+      "confidence": 0.55
+    },
+    {
+      "text": "Ortigas",
+      "confidence": 0.51
+    },
+    {
+      "text": "Ave,,",
+      "confidence": 0.47
+    },
+    {
+      "text": "Pasig",
+      "confidence": 0.42
+    },
+    {
+      "text": "City",
+      "confidence": 0.29
+    },
+    {
+      "text": "l0/26/2o2b",
+      "confidence": 0.37
+    },
+    {
+      "text": "6:o2",
+      "confidence": 0.31
+    },
+    {
+      "text": "PM",
+      "confidence": 0.49
+    },
+    {
+      "text": "SI#",
+      "confidence": 0.29
+    },
+    {
+      "text": "77?",
+      "confidence": 0.38
+    },
+    {
+      "text": "-----------------------?",
+      "confidence": 0.37
+    },
+    {
+      "text": "Ri?",
+      "confidence": 0.3
+    },
+    {
+      "text": "5kg",
+      "confidence": 0.59
+    },
+    {
+      "text": "325.oo",
+      "confidence": 0.59
+    },
+    {
+      "text": "Eggs",
+      "confidence": 0.56
+    },
+    {
+      "text": "1",
+      "confidence": 0.51
+    },
+    {
+      "text": "tray",
+      "confidence": 0.61
+    },
+    {
+      "text": "2A5?",
+      "confidence": 0.34
+    },
+    {
+      "text": "Chi?",
+      "confidence": 0.58
+    },
+    {
+      "text": "l.2kg",
+      "confidence": 0.35
+    },
+    {
+      "text": "3l2?",
+      "confidence": 0.29
+    },
+    {
+      "text": "Cooking",
+      "confidence": 0.28
+    },
+    {
+      "text": "oil",
+      "confidence": 0.41
+    },
+    {
+      "text": "1L",
+      "confidence": 0.45
+    },
+    {
+      "text": "12B.00",
+      "confidence": 0.57
+    },
+    {
+      "text": "Vegetables",
+      "confidence": 0.33
+    },
+    {
+      "text": "2l4.2S",
+      "confidence": 0.47
+    },
+    {
+      "text": "Detergent",
+      "confidence": 0.51
+    },
+    {
+      "text": "622.0o",
+      "confidence": 0.55
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.58
+    },
+    {
+      "text": "TOTAL",
+      "confidence": 0.59
+    },
+    {
+      "text": "P1,B4b,75",
+      "confidence": 0.4
+    },
+    {
+      "text": "CASH",
+      "confidence": 0.62
+    },
+    {
+      "text": "2,ooo,00",
+      "confidence": 0.33
+    },
+    {
+      "text": "CHANGE",
+      "confidence": 0.61
+    },
+    {
+      "text": "l53?",
+      "confidence": 0.3
+    }
+  ],
+  "raw": null
+}

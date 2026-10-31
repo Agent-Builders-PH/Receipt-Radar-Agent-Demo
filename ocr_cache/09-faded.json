@@ -1,0 +1,169 @@
+{
+  "file": "09-faded.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "                BAYAN HARDWARE\n        Rizal Ave., Sta. Cruz, Manila\n\n10/25/2026 3:27 PM              OR# 11920\n----------------------------------------------\nPaint 1 gal white                       685.00\nPaint brush 2in                          95.00\nMasking tape                             75.00\nSandpaper (5 pcs)                        60.00\nWall putty 1kg                          320.00\n----------------------------------------------\nTOTAL                                P1,285.00\nCASH                                  1,300.00\nCHANGE                                   65.00",
+  "words": [
+    {
+      "text": "BAYAN",
+      "confidence": 0.72
+    },
+    {
+      "text": "HARDWARE",
+      "confidence": 0.7
+    },
+    {
+      "text": "Rizal",
+      "confidence": 0.65
+    },
+    {
+      "text": "Ave.,",
+      "confidence": 0.81
+    },
+    {
+      "text": "Sta.",
+      "confidence": 0.62
+    },
+    {
+      "text": "Cruz,",
+      "confidence": 0.73
+    },
+    {
+      "text": "Manila",
+      "confidence": 0.82
+    },
+    {
+      "text": "10/25/2026",
+      "confidence": 0.64
+    },
+    {
+      "text": "3:27",
+      "confidence": 0.74
+    },
+    {
+      "text": "PM",
+      "confidence": 0.76
+    },
+    {
+      "text": "OR#",
+      "confidence": 0.63
+    },
+    {
+      "text": "11920",
+      "confidence": 0.7
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.77
+    },
+    {
+      "text": "Paint",
+      "confidence": 0.72
+    },
+    {
+      "text": "1",
+      "confidence": 0.78
+    },
+    {
+      "text": "gal",
+      "confidence": 0.65
+    },
+    {
+      "text": "white",
+      "confidence": 0.67
+    },
+    {
+      "text": "685.00",
+      "confidence": 0.64
+    },
+    {
+      "text": "Paint",
+      "confidence": 0.73
+    },
+    {
+      "text": "brush",
+      "confidence": 0.82
+    },
+    {
+      "text": "2in",
+      "confidence": 0.75
+    },
+    {
+      "text": "95.00",
+      "confidence": 0.79
+    },
+    {
+      "text": "Masking",
+      "confidence": 0.7
+    },
+    {
+      "text": "tape",
+      "confidence": 0.78
+    },
+    {
+      "text": "75.00",
+      "confidence": 0.64
+    },
+    {
+      "text": "Sandpaper",
+      "confidence": 0.68
+    },
+    {
+      "text": "(5",
+      "confidence": 0.77
+    },
+    {
+      "text": "pcs)",
+      "confidence": 0.78
+    },
+    {
+      "text": "60.00",
+      "confidence": 0.71
+    },
+    {
+      "text": "Wall",
+      "confidence": 0.64
+    },
+    {
+      "text": "putty",
+      "confidence": 0.68
+    },
+    {
+      "text": "1kg",
+      "confidence": 0.67
+    },
+    {
+      "text": "320.00",
+      "confidence": 0.68
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.8
+    },
+    {
+      "text": "TOTAL",
+      "confidence": 0.66
+    },
+    {
+      "text": "P1,285.00",
+      "confidence": 0.58
+    },
+    {
+      "text": "CASH",
+      "confidence": 0.81
+    },
+    {
+      "text": "1,300.00",
+      "confidence": 0.71
+    },
+    {
+      "text": "CHANGE",
+      "confidence": 0.7
+    },
+    {
+      "text": "65.00",
+      "confidence": 0.69
+    }
+  ],
+  "raw": null
+}

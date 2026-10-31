@@ -1,0 +1,133 @@
+{
+  "file": "10-sideways.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "                  BOTIKA UNO\n           Shaw Blvd., Mandaluyong\n\n10/29/2026 9:48 AM              SI# 30417\n----------------------------------------------\nParacetamol 500mg x20                   110.00\nCetirizine 10mg x10                     180.00\nVitamin C 500mg x30                     322.50\n----------------------------------------------\nTOTAL                                  P612.50\nCASH                                    700.00\nCHANGE                                   87.50",
+  "words": [
+    {
+      "text": "BOTIKA",
+      "confidence": 0.96
+    },
+    {
+      "text": "UNO",
+      "confidence": 0.95
+    },
+    {
+      "text": "Shaw",
+      "confidence": 0.96
+    },
+    {
+      "text": "Blvd.,",
+      "confidence": 0.93
+    },
+    {
+      "text": "Mandaluyong",
+      "confidence": 0.98
+    },
+    {
+      "text": "10/29/2026",
+      "confidence": 0.98
+    },
+    {
+      "text": "9:48",
+      "confidence": 0.97
+    },
+    {
+      "text": "AM",
+      "confidence": 0.93
+    },
+    {
+      "text": "SI#",
+      "confidence": 0.96
+    },
+    {
+      "text": "30417",
+      "confidence": 0.94
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.94
+    },
+    {
+      "text": "Paracetamol",
+      "confidence": 0.99
+    },
+    {
+      "text": "500mg",
+      "confidence": 0.99
+    },
+    {
+      "text": "x20",
+      "confidence": 0.92
+    },
+    {
+      "text": "110.00",
+      "confidence": 0.98
+    },
+    {
+      "text": "Cetirizine",
+      "confidence": 0.96
+    },
+    {
+      "text": "10mg",
+      "confidence": 0.95
+    },
+    {
+      "text": "x10",
+      "confidence": 0.94
+    },
+    {
+      "text": "180.00",
+      "confidence": 0.97
+    },
+    {
+      "text": "Vitamin",
+      "confidence": 0.95
+    },
+    {
+      "text": "C",
+      "confidence": 0.97
+    },
+    {
+      "text": "500mg",
+      "confidence": 0.97
+    },
+    {
+      "text": "x30",
+      "confidence": 0.93
+    },
+    {
+      "text": "322.50",
+      "confidence": 0.97
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.99
+    },
+    {
+      "text": "TOTAL",
+      "confidence": 0.99
+    },
+    {
+      "text": "P612.50",
+      "confidence": 0.96
+    },
+    {
+      "text": "CASH",
+      "confidence": 0.92
+    },
+    {
+      "text": "700.00",
+      "confidence": 0.92
+    },
+    {
+      "text": "CHANGE",
+      "confidence": 0.93
+    },
+    {
+      "text": "87.50",
+      "confidence": 0.99
+    }
+  ],
+  "raw": null
+}

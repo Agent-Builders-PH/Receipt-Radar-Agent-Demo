@@ -1,0 +1,149 @@
+{
+  "file": "06-ridehail.png",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "Thanks for riding, Ana!\nOct 27, 2026 6:35 PM\nPickup Cubao, Quezon City\nDrop-off BGC, Taguig\nCar SakayGo Car 4-seater\nBase fare PHP 198.00\nBooking fee PHP 40.00\nTotal paid PHP 238.00\nPaid with Cash",
+  "words": [
+    {
+      "text": "Thanks",
+      "confidence": 0.98
+    },
+    {
+      "text": "for",
+      "confidence": 0.98
+    },
+    {
+      "text": "riding,",
+      "confidence": 0.95
+    },
+    {
+      "text": "Ana!",
+      "confidence": 0.94
+    },
+    {
+      "text": "Oct",
+      "confidence": 0.92
+    },
+    {
+      "text": "27,",
+      "confidence": 0.97
+    },
+    {
+      "text": "2026",
+      "confidence": 0.95
+    },
+    {
+      "text": "6:35",
+      "confidence": 0.97
+    },
+    {
+      "text": "PM",
+      "confidence": 0.95
+    },
+    {
+      "text": "Pickup",
+      "confidence": 0.97
+    },
+    {
+      "text": "Cubao,",
+      "confidence": 0.94
+    },
+    {
+      "text": "Quezon",
+      "confidence": 0.98
+    },
+    {
+      "text": "City",
+      "confidence": 0.97
+    },
+    {
+      "text": "Drop-off",
+      "confidence": 0.95
+    },
+    {
+      "text": "BGC,",
+      "confidence": 0.96
+    },
+    {
+      "text": "Taguig",
+      "confidence": 0.97
+    },
+    {
+      "text": "Car",
+      "confidence": 0.93
+    },
+    {
+      "text": "SakayGo",
+      "confidence": 0.96
+    },
+    {
+      "text": "Car",
+      "confidence": 0.98
+    },
+    {
+      "text": "4-seater",
+      "confidence": 0.94
+    },
+    {
+      "text": "Base",
+      "confidence": 0.98
+    },
+    {
+      "text": "fare",
+      "confidence": 0.97
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.98
+    },
+    {
+      "text": "198.00",
+      "confidence": 0.94
+    },
+    {
+      "text": "Booking",
+      "confidence": 0.93
+    },
+    {
+      "text": "fee",
+      "confidence": 0.98
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.98
+    },
+    {
+      "text": "40.00",
+      "confidence": 0.95
+    },
+    {
+      "text": "Total",
+      "confidence": 0.93
+    },
+    {
+      "text": "paid",
+      "confidence": 0.93
+    },
+    {
+      "text": "PHP",
+      "confidence": 0.96
+    },
+    {
+      "text": "238.00",
+      "confidence": 0.94
+    },
+    {
+      "text": "Paid",
+      "confidence": 0.99
+    },
+    {
+      "text": "with",
+      "confidence": 0.96
+    },
+    {
+      "text": "Cash",
+      "confidence": 0.93
+    }
+  ],
+  "raw": null
+}

@@ -1,0 +1,10 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Your own receipts stay on your laptop (the samples are committed)
+my-receipts/

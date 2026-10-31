@@ -1,0 +1,201 @@
+{
+  "file": "01-fastfood.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "                 BIDA BURGER\n         Katipunan Ave., Quezon City\n         VAT REG TIN 000-123-456-000\n\n10/28/2026 12:41 PM            OR# 004812\n----------------------------------------------\n1 Bida Burger Meal                      159.00\n1 Peach Mango Pie                        45.00\n1 Large Iced Tea                         85.00\n----------------------------------------------\nVATable Sales                           258.04\nVAT 12%                                  30.96\nTOTAL                                  P289.00\nCASH                                    500.00\nCHANGE                                  211.00\n\n           Salamat po! Balik kayo!",
+  "words": [
+    {
+      "text": "BIDA",
+      "confidence": 0.93
+    },
+    {
+      "text": "BURGER",
+      "confidence": 0.98
+    },
+    {
+      "text": "Katipunan",
+      "confidence": 0.97
+    },
+    {
+      "text": "Ave.,",
+      "confidence": 0.94
+    },
+    {
+      "text": "Quezon",
+      "confidence": 0.95
+    },
+    {
+      "text": "City",
+      "confidence": 0.95
+    },
+    {
+      "text": "VAT",
+      "confidence": 0.97
+    },
+    {
+      "text": "REG",
+      "confidence": 0.98
+    },
+    {
+      "text": "TIN",
+      "confidence": 0.93
+    },
+    {
+      "text": "000-123-456-000",
+      "confidence": 0.92
+    },
+    {
+      "text": "10/28/2026",
+      "confidence": 0.98
+    },
+    {
+      "text": "12:41",
+      "confidence": 0.95
+    },
+    {
+      "text": "PM",
+      "confidence": 0.97
+    },
+    {
+      "text": "OR#",
+      "confidence": 0.92
+    },
+    {
+      "text": "004812",
+      "confidence": 0.95
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.97
+    },
+    {
+      "text": "1",
+      "confidence": 0.94
+    },
+    {
+      "text": "Bida",
+      "confidence": 0.99
+    },
+    {
+      "text": "Burger",
+      "confidence": 0.98
+    },
+    {
+      "text": "Meal",
+      "confidence": 0.92
+    },
+    {
+      "text": "159.00",
+      "confidence": 0.92
+    },
+    {
+      "text": "1",
+      "confidence": 0.96
+    },
+    {
+      "text": "Peach",
+      "confidence": 0.99
+    },
+    {
+      "text": "Mango",
+      "confidence": 0.95
+    },
+    {
+      "text": "Pie",
+      "confidence": 0.94
+    },
+    {
+      "text": "45.00",
+      "confidence": 0.95
+    },
+    {
+      "text": "1",
+      "confidence": 0.92
+    },
+    {
+      "text": "Large",
+      "confidence": 0.94
+    },
+    {
+      "text": "Iced",
+      "confidence": 0.95
+    },
+    {
+      "text": "Tea",
+      "confidence": 0.95
+    },
+    {
+      "text": "85.00",
+      "confidence": 0.94
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.94
+    },
+    {
+      "text": "VATable",
+      "confidence": 0.94
+    },
+    {
+      "text": "Sales",
+      "confidence": 0.95
+    },
+    {
+      "text": "258.04",
+      "confidence": 0.94
+    },
+    {
+      "text": "VAT",
+      "confidence": 0.92
+    },
+    {
+      "text": "12%",
+      "confidence": 0.98
+    },
+    {
+      "text": "30.96",
+      "confidence": 0.96
+    },
+    {
+      "text": "TOTAL",
+      "confidence": 0.96
+    },
+    {
+      "text": "P289.00",
+      "confidence": 0.93
+    },
+    {
+      "text": "CASH",
+      "confidence": 0.99
+    },
+    {
+      "text": "500.00",
+      "confidence": 0.98
+    },
+    {
+      "text": "CHANGE",
+      "confidence": 0.93
+    },
+    {
+      "text": "211.00",
+      "confidence": 0.94
+    },
+    {
+      "text": "Salamat",
+      "confidence": 0.97
+    },
+    {
+      "text": "po!",
+      "confidence": 0.97
+    },
+    {
+      "text": "Balik",
+      "confidence": 0.99
+    },
+    {
+      "text": "kayo!",
+      "confidence": 0.95
+    }
+  ],
+  "raw": null
+}

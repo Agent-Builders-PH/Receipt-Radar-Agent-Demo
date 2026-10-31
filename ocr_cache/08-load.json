@@ -1,0 +1,113 @@
+{
+  "file": "08-load.jpg",
+  "source": "synthetic",
+  "document_id": null,
+  "text": "               LOADPLUS PREPAID\n        Authorized Retailer: JM Store\n\nDate: 10/30/2026 7:15 PM\n----------------------------------------------\nMobile No.                       0917-***-4821\nProduct                        Regular Load 99\nRef No.                           LP2610307788\n----------------------------------------------\nAMOUNT                                  P99.00\n\n           Transaction successful.",
+  "words": [
+    {
+      "text": "LOADPLUS",
+      "confidence": 0.94
+    },
+    {
+      "text": "PREPAID",
+      "confidence": 0.99
+    },
+    {
+      "text": "Authorized",
+      "confidence": 0.93
+    },
+    {
+      "text": "Retailer:",
+      "confidence": 0.97
+    },
+    {
+      "text": "JM",
+      "confidence": 0.93
+    },
+    {
+      "text": "Store",
+      "confidence": 0.94
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.99
+    },
+    {
+      "text": "10/30/2026",
+      "confidence": 0.93
+    },
+    {
+      "text": "7:15",
+      "confidence": 0.96
+    },
+    {
+      "text": "PM",
+      "confidence": 0.95
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.95
+    },
+    {
+      "text": "Mobile",
+      "confidence": 0.95
+    },
+    {
+      "text": "No.",
+      "confidence": 0.93
+    },
+    {
+      "text": "0917-***-4821",
+      "confidence": 0.98
+    },
+    {
+      "text": "Product",
+      "confidence": 0.93
+    },
+    {
+      "text": "Regular",
+      "confidence": 0.94
+    },
+    {
+      "text": "Load",
+      "confidence": 0.92
+    },
+    {
+      "text": "99",
+      "confidence": 0.94
+    },
+    {
+      "text": "Ref",
+      "confidence": 0.95
+    },
+    {
+      "text": "No.",
+      "confidence": 0.98
+    },
+    {
+      "text": "LP2610307788",
+      "confidence": 0.95
+    },
+    {
+      "text": "----------------------------------------------",
+      "confidence": 0.93
+    },
+    {
+      "text": "AMOUNT",
+      "confidence": 0.94
+    },
+    {
+      "text": "P99.00",
+      "confidence": 0.99
+    },
+    {
+      "text": "Transaction",
+      "confidence": 0.92
+    },
+    {
+      "text": "successful.",
+      "confidence": 0.96
+    }
+  ],
+  "raw": null
+}
