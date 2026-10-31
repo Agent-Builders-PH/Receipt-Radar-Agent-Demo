@@ -49,4 +49,6 @@ You need Python 3.12, [uv](https://docs.astral.sh/uv/) and an Anthropic API key.
 
 `check.py` prints **PASS**, **FAIL** (with the one thing to fix) or **TODO** (not written yet).
 
+**Prefer clicking?** Run `python app.py` and open http://127.0.0.1:8765. You get the same agent in your browser: pick a receipt and watch each step print on a till tape. Until you finish the TODOs, it shows which one the pipeline stopped at.
+
 **Behind?** Copy the matching file from `solutions/` and keep going. For example: `copy solutions\schema.py receipt_radar\schema.py`.

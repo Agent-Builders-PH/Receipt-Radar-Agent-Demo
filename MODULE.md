@@ -178,6 +178,8 @@ Next: finish Phase 1 (the first TODO or FAIL above), then python check.py 1
 
 **TODO** lines are normal: they're the work ahead of you. Only **FAIL** lines need fixing now.
 
+> **Prefer clicking?** `python app.py` opens the same agent in your browser (see the end of §7). Before you finish the TODOs, it shows where the pipeline stops.
+
 > **Local Python broken?** Open the repo in GitHub Codespaces (Code → Codespaces → Create). The devcontainer installs everything; then add your key to `.env`.
 
 ### How `check.py` works
@@ -479,6 +481,20 @@ Food: ₱289 of ₱4,000 in October 2026 (₱3,711 left)
 
 When the gate stops a receipt, `radar.py` shows why and asks *"Log it anyway? [y/N]"*. That's the "Ask you" box in the diagram. To start over with an empty ledger, delete every line except the header in `data/expenses.csv`.
 
+### The same agent in your browser
+
+```powershell
+python app.py
+```
+
+This opens **http://127.0.0.1:8765** (press Ctrl+C in the terminal to stop it). It runs the same `process_receipt()` as `radar.py`, with no extra installs:
+
+- **Left:** pick one of the 10 samples, or add your own photo (that needs live OCR). Type an optional question, then press **Read and log this receipt**.
+- **Middle:** the run prints as a till tape: what Lumen read, what Claude filled in, each gate rule passing or failing, and the tools the Logger called. Then it's stamped **Logged**, **Already logged** or **Held**. A held receipt offers **Log it anyway**.
+- **Right:** the month's budget bars, the ledger (newest first, with the new row highlighted), and a box for spending questions and budget changes (the same as `--ask`).
+
+Open it before you finish the TODOs, too: it stamps **To do** and names the TODO the pipeline stopped at. The page only listens on your own laptop (127.0.0.1), so nobody else on the Wi-Fi can open it.
+
 ---
 
 ## 8. Use it on your own receipts
@@ -524,6 +540,7 @@ copy solutions\gate.py   receipt_radar\gate.py       # Phase 3
 | `strict mode: add "additionalProperties": False` | The key is missing, or is `false` (lowercase) | Python spells it `False` |
 | `set_budget must never be offered during a receipt run` | `set_budget` is in `RECEIPT_TOOLS` | Take it out; it lives in `ASK_TOOLS` only |
 | `Gate: stopped at rule 4` on your own receipt | Claude and Lumen read different totals | Check the photo; type `y` if Claude was right |
+| `python app.py` says the address is in use | Another copy is already running | Close the other terminal, or run `$env:RADAR_PORT=8766; python app.py` |
 | `UnicodeEncodeError` with `₱` | An old Windows console | Run `chcp 65001` first, or use Windows Terminal |
 | `415` from Lumen | A HEIC or unsupported file | Use JPEG, PNG or WebP |
 

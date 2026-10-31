@@ -139,6 +139,12 @@ def env_and_samples_ready():
     print(f"      setup ok, OCR_MODE={settings.OCR_MODE}, agno {have}")
 
 
+@offline(0)
+def browser_ui_ready():
+    import app  # the web page: python app.py
+    assert app.UI.exists(), "ui/index.html is missing"
+
+
 @live(0)
 def anthropic_key_works():
     import anthropic

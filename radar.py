@@ -29,12 +29,13 @@ if hasattr(sys.stdout, "reconfigure"):
 
 @dataclass
 class Outcome:
-    status: str                        # logged | duplicate | stopped | not_logged | error
+    status: str                        # logged | duplicate | stopped | not_logged | error | todo
     receipt: Receipt | None = None
     gate: gate.GateResult | None = None
     reply: str = ""
     tools_called: list[str] = field(default_factory=list)
     rows_added: int = 0
+    ocr: object = None                 # the OcrResult, for the UI
 
 
 def tool_names(run) -> list[str]:
@@ -57,7 +58,10 @@ def process_receipt(photo: str | Path, question: str | None = None, confirm=None
 
     # 2. The Reader agent fills the Receipt form from the photo.
     say("2. Claude reads the photo")
-    receipt = read_receipt(photo, ocr)
+    try:
+        receipt = read_receipt(photo, ocr)
+    except NotImplementedError as e:  # the template before TODO 2
+        return Outcome("todo", reply=str(e), ocr=ocr)
     if receipt:
         say(f"   {receipt.date} | {receipt.vendor} | {ledger.peso(receipt.amount_php)} | "
             f"{receipt.category} | sure={receipt.sure}")
@@ -68,7 +72,7 @@ def process_receipt(photo: str | Path, question: str | None = None, confirm=None
     if not result.ok:
         if not (receipt and confirm and receipt.amount_php > 0 and confirm(receipt, result)):
             return Outcome("stopped", receipt, result,
-                           reply="Not logged. Check the receipt and try again, or log it yourself.")
+                           reply="Not logged. Check the receipt and try again, or log it yourself.", ocr=ocr)
         say("   You confirmed it, so the Logger gets it.")
 
     # 4. The Logger agent decides whether and how to log, using strict tools.
@@ -85,7 +89,7 @@ def process_receipt(photo: str | Path, question: str | None = None, confirm=None
         status = "duplicate"
     else:
         status = "not_logged"
-    return Outcome(status, receipt, result, reply, called, added)
+    return Outcome(status, receipt, result, reply, called, added, ocr)
 
 
 def ask_yes_no(receipt: Receipt, result: gate.GateResult) -> bool:
