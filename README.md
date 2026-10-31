@@ -37,7 +37,7 @@ python check.py
 
 macOS / Linux: `source .venv/bin/activate` and `cp .env.example .env`.
 
-You need Python 3.12, [uv](https://docs.astral.sh/uv/) and an Anthropic API key. You don't need Lumen keys: the sample receipts' OCR is saved in `ocr_cache/`.
+You need Python 3.12, [uv](https://docs.astral.sh/uv/), an Anthropic API key, and the Lumen OCR key and secret the host gives you. The sample receipts' OCR is saved in `ocr_cache/`, so you build in cached mode, then use Lumen live for your own receipts.
 
 ## The three phases
 

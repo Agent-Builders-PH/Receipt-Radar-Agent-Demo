@@ -134,7 +134,7 @@ Keeping them apart keeps each lesson in one file: read it, then log it.
 - **Python 3.12** and **[uv](https://docs.astral.sh/uv/)**: the same as Episode 1.
 - **Git.**
 - **An Anthropic API key** from the [Claude Console](https://console.anthropic.com) (API keys page).
-- **No Lumen keys.** You run in *cached* mode: the OCR results for the 10 sample receipts are already saved in `ocr_cache/`.
+- **Your Lumen OCR key and secret**, which the host gives you. You build in *cached* mode: the OCR results for the 10 sample receipts are already saved in `ocr_cache/`, so the TODOs never spend Lumen credits. You read a receipt live in §4, and use live mode for your own receipts in §8.
 
 ### Five commands (Windows PowerShell)
 
@@ -155,7 +155,7 @@ copy .env.example .env
 notepad .env
 ```
 
-Replace `sk-ant-your-key-here` with your key, save, and close. Leave `OCR_MODE=cached`. `.env` is in `.gitignore`, so your key never gets committed.
+Replace `sk-ant-your-key-here` with your Anthropic key. Paste the Lumen key and secret from the host after `LUMEN_API_KEY=` and `LUMEN_API_SECRET=`. Leave `OCR_MODE=cached` for now. Save and close. `.env` is in `.gitignore`, so your keys never get committed.
 
 ### Check it
 
@@ -189,7 +189,7 @@ Next: finish Phase 1 (the first TODO or FAIL above), then python check.py 1
 | `python check.py` | Setup, plus the quick offline checks for every phase | No (one free key check) |
 | `python check.py 1` | Phase 1's offline checks, then a **live** check that sends 2 receipts to Claude | A little |
 | `python check.py 2` | Phase 2's offline checks, then a live check that logs one receipt twice | A little |
-| `python check.py 3` | Phase 3's offline checks, then **all 10 cases** in `cases.json` | About 20 Claude calls |
+| `python check.py 3` | Phase 3's offline checks, then **all 10 cases** in `cases.json` | About 40 Claude calls |
 | `python check.py 3 --offline` | Only the offline part | No |
 
 The live checks use a scratch copy of `data/`, so they never touch your own `expenses.csv`. They also always read the saved Lumen results in `ocr_cache/`, so a test run never spends Lumen credits.
@@ -198,7 +198,7 @@ The live checks use a scratch copy of `data/`, so they never touch your own `exp
 
 ## 4. How Lumen OCR fits in
 
-*The host runs this part live on screen. You only watch and read along.*
+*The host shows this part on screen first. Then you read one receipt live with your own Lumen key.*
 
 Lumen OCR is **asynchronous**: you hand it a photo and come back for the words.
 
@@ -220,6 +220,16 @@ python -m receipt_radar.lumen_ocr receipts/01-fastfood.jpg
 ```
 
 You'll see the text, and the five words Lumen was least sure about. That **confidence** number matters in Phase 3.
+
+**Now read it live, with your own key.** This sets live mode for the next command only:
+
+```powershell
+$env:OCR_MODE="live"; python -m receipt_radar.lumen_ocr receipts/01-fastfood.jpg; Remove-Item Env:OCR_MODE
+```
+
+The first line now says `[live]` instead of `[cached]`. That one read costs about 8 credits (6 for the upload, plus 1 for each status check and the read), and saves Lumen's answer over `ocr_cache/01-fastfood.json`.
+
+> **Keep `OCR_MODE=cached` in `.env` while you build.** In live mode, every `radar.py` run uploads the photo again and spends credits. `check.py` always reads the saved results either way.
 
 This is what Lumen actually sends back for each page (shortened). `lumen_ocr.py` turns it into plain text plus `(word, confidence)` pairs:
 
@@ -513,7 +523,7 @@ Open it before you finish the TODOs, too: it stamps **To do** and names the TODO
 
 1. Take a photo, or a screenshot of an e-receipt. Crop out names, addresses and card digits.
 2. Put it in a folder called `my-receipts/`, which is in `.gitignore`.
-3. Cached mode only knows the 10 samples. To read your own receipt you need **live** OCR: set `OCR_MODE=live` and add the Lumen keys to `.env` (ask the host about sandbox keys). Then:
+3. Cached mode only knows the 10 samples. To read your own receipt, switch to **live** OCR: set `OCR_MODE=live` in `.env`. Your Lumen keys are already there from setup. Each new photo costs about 8 credits. Then:
 
 ```powershell
 python radar.py my-receipts/lunch.jpg
@@ -555,6 +565,10 @@ copy solutions\gate.py   receipt_radar\gate.py       # Phase 3
 | `python app.py` says the address is in use | Another copy is already running | Close the other terminal, or run `$env:RADAR_PORT=8766; python app.py` |
 | `UnicodeEncodeError` with `₱` | An old Windows console | Run `chcp 65001` first, or use Windows Terminal |
 | `415` from Lumen | A HEIC or unsupported file | Use JPEG, PNG or WebP |
+| `OCR_MODE=live needs LUMEN_API_KEY and LUMEN_API_SECRET` | The Lumen keys aren't in `.env` | Paste the key and secret from the host |
+| `Lumen said 401: the API key or secret is wrong` | A typo, or the two are swapped | Copy them again from the host's message |
+| `Lumen said 403: this API key has no OCR grant` | Your key can't use OCR | Tell the host; they add the OCR grant to your key |
+| `Lumen said 403 (out of API or Lumen credits)` | Your key's credits ran out | Samples fall back to the saved OCR. For your own receipts, ask the host for credits |
 
 ---
 
