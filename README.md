@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/ab-logo-white.png">
-    <img src="assets/ab-logo-dark.png" alt="Agent Builders Philippines" width="300">
+    <img src="assets/ab-logo-dark.png" alt="Agent Builders Philippines" width="320">
   </picture>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <picture>
@@ -10,45 +10,57 @@
   </picture>
 </p>
 
-# Receipt Radar Agent: build-along template
+# Receipt Radar Agent: starter template
 
-**Agent Builders PH · Episode 2 · Fri, Nov 6, 2026, 2:00 PM PHT.** Snap a receipt and get one logged expense plus a budget line. Lumen OCR reads the raw text, Claude reads the photo and fills in a form, and an [Agno](https://docs.agno.com) agent logs it with strict tools.
+**Agent Builders PH · Episode 2.** Build a personal agent that turns a photo of a Philippine receipt into one logged expense and a budget line. Lumen OCR reads every word on the receipt, Claude reads the photo and fills in a form, and an [Agno](https://docs.agno.com) agent logs it with strict tools.
 
-```
-python radar.py receipts/01-fastfood.jpg
+You'll build it in three phases: a **Reader** agent that always answers with a filled-in form, a **Logger** agent whose tools refuse bad calls, and a **gate** in plain Python that stops any receipt the two readers don't agree on.
 
-Logged: 2026-10-28 | Bida Burger | ₱289 | Food
-Food: ₱289 of ₱4,000 in October 2026 (₱3,711 left)
-```
+📘 **Follow [MODULE.md](MODULE.md)**. It walks you through everything, from setup to logging your own receipts.
 
-You build it in the session by filling in **eight `TODO`s** across four files.
+🧭 **Prefer a click-through checklist?** Open the **[walkthrough guide](https://claude.ai/artifact/VB9qtvfkokaVuCZrqqaeLm)**. It has an interactive map of how the agent works, every step with copy buttons, and tick-boxes that remember your progress. A copy is also in this repo as [WALKTHROUGH.html](WALKTHROUGH.html). GitHub shows that file as source code, so open your local copy after cloning: `start WALKTHROUGH.html` (Windows) or `open WALKTHROUGH.html` (macOS).
 
-📘 **Follow [MODULE.md](MODULE.md)**, the step-by-step module.
+🖥️ **Prefer a browser?** Run `python app.py` and open http://127.0.0.1:8765: the same agent, with each step printed on a till tape. Until your TODOs are done, it shows which one the pipeline stopped at.
 
-## Setup in five commands (Windows PowerShell)
+## Get started
 
-```powershell
+```bash
 uv venv --python 3.12
-.venv\Scripts\activate
+.venv\Scripts\activate          # Windows
+source .venv/bin/activate       # macOS / Linux
 uv pip install -r requirements.txt
-copy .env.example .env          # then paste your Anthropic key into .env
-python check.py
+
+cp .env.example .env            # Windows: copy .env.example .env
+python check.py                 # shows what's left to build
 ```
 
-macOS / Linux: `source .venv/bin/activate` and `cp .env.example .env`.
+In `.env`, paste your Anthropic key, and the Lumen OCR key and secret the host gives you. Leave `OCR_MODE=cached`: the 10 sample receipts' OCR is already saved in `ocr_cache/`, so building never spends Lumen credits.
 
-You need Python 3.12, [uv](https://docs.astral.sh/uv/), an Anthropic API key, and the Lumen OCR key and secret the host gives you. The sample receipts' OCR is saved in `ocr_cache/`, so you build in cached mode, then use Lumen live for your own receipts.
+## How this template works
 
-## The three phases
+The project structure is ready. The parts you build are marked **`TODO`**, numbered to match the module:
 
-| Phase | Files you edit | TODOs | Check |
-|---|---|---|---|
-| 1. Read | `receipt_radar/schema.py`, `receipt_radar/reader.py` | 1 to 3 | `python check.py 1` |
-| 2. Log | `receipt_radar/tools.py` | 4 to 6 | `python check.py 2` |
-| 3. Guard and test | `receipt_radar/gate.py` | 7, then 8 = run all of `cases.json` | `python check.py 3` |
+| TODO | File | Module section |
+|---|---|---|
+| 1 | `receipt_radar/schema.py` → `Receipt` | §5 Phase 1: the Receipt form |
+| 2 | `receipt_radar/reader.py` → `build_reader` | §5 the Reader agent |
+| 3 | `receipt_radar/reader.py` → `read_receipt` | §5 send the photo and the OCR text |
+| 4 | `receipt_radar/tools.py` → `log_expense` | §6 Phase 2: a strict tool |
+| 5 | `receipt_radar/tools.py` → `find_duplicate` | §6 the same way |
+| 6 | `receipt_radar/tools.py` → `RECEIPT_TOOLS` | §6 the Logger's tool list |
+| 7 | `receipt_radar/gate.py` → `check` | §7 Phase 3: gate rules 3 to 5 |
+| 8 | `cases.json`, through `check.py` | §7 run all 10 cases |
 
-`check.py` prints **PASS**, **FAIL** (with the one thing to fix) or **TODO** (not written yet).
+After each TODO, run the offline checks for that phase. No Claude calls, no cost:
 
-**Prefer clicking?** Run `python app.py` and open http://127.0.0.1:8765. You get the same agent in your browser: pick a receipt and watch each step print on a till tape. Until you finish the TODOs, it shows which one the pipeline stopped at.
+```bash
+python check.py 1 --offline     # PASS / FAIL (with a hint) / TODO
+```
 
-**Behind?** Copy the matching file from `solutions/` and keep going. For example: `copy solutions\schema.py receipt_radar\schema.py`.
+Drop `--offline` when a phase passes, and `check.py` sends a few real receipts to Claude. Behind by more than a phase? Copy the finished file from `solutions/` (MODULE §9).
+
+When `python check.py 3` prints `10 of 10 cases pass`, you're done. 🎉
+
+## Never commit secrets
+
+`.env` is in `.gitignore`, and so is `my-receipts/`, where your own receipt photos go. Keep it that way, never paste a key in the group chat, and keep your own copy of this repo **private**.
